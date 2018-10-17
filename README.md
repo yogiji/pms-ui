@@ -1,2 +1,2 @@
-# angular2-registration-login-example-cli
+# PMS Angular UI
 
