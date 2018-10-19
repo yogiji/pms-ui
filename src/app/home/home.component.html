@@ -1,24 +1,35 @@
-﻿<div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.firstName}}!</h1>
+﻿<div class="col-md-12">
+    
     <p>Policy Management System</p>
     <h3>Welcome {{currentUser.firstName}} {{currentUser.lastName}}</h3>
     <b>Available Policies</b>
-    <ul><table  >
-        <li *ngFor="let policy of policies">
+    <ul><div class="container">
+            <table class="table row-border hover" >
+                <thead>
+                    <tr>
+                      <th>Sr No.</th>
+                      <th>Policy Name</th>
+                      <th>Policy Details</th>
+                       </tr>
+                    </thead>
+                    <tbody  *ngFor="let policy of policies">
+        
                  <tr>
                      <td>{{policy.policyId}}</td>
                      <td>{{policy.policyName}}</td>
                      <td>{{policy.policyDetails}}</td>
                 </tr>
-        </li>
-    </table>
+        
+    </tbody>
+    </table></div>
     </ul>
 <b>
     {{currentUser.firstName}} {{currentUser.lastName}} User Policies
 </b>
-<ul><table >
+<ul><div class="container">
+        <table class="table row-border hover" >
          
-    <li *ngFor="let policy of currentUser.policies">
+    <tbody *ngFor="let policy of currentUser.policies">
              <tr>
                  <td>{{policy.policyId}}</td>
                  <td>{{policy.policyName}}</td>
@@ -26,9 +37,9 @@
                  <td>{{policy.policyEndDate}}</td>
                  <td>{{policy.valid}}</td>
             </tr>
-           
-    </li>
+    </tbody>
 </table>
+</div>
 </ul>
     <p><a [routerLink]="['/login']">Logout</a></p>
 </div>

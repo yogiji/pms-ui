@@ -2,6 +2,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+//Import DataTable
+import { DataTablesModule } from 'angular-datatables';
+
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -24,7 +27,8 @@ import { ContactUsComponent } from './contactus';
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        routing
+        routing,
+        DataTablesModule
     ],
     declarations: [
         AppComponent,
@@ -34,6 +38,7 @@ import { ContactUsComponent } from './contactus';
         RegisterComponent,
         ContactUsComponent,
         AboutUsComponent
+        
     ],
     providers: [
         AuthGuard,
